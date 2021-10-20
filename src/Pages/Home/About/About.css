@@ -1,0 +1,25 @@
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .hr {
+    color: rgb(92, 57, 11);
+    border-bottom: 5px solid rgb(100, 59, 5);
+    width: 70px;
+  }
+  .about-sub-title {
+    color: rgb(202, 170, 127);
+    font-size: 26px;
+    font-weight: 400;
+  }
+  .about-doctor {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-doctor img {
+    margin-top: 8px;
+    width: 80px;
+    height: 50px;
+  }

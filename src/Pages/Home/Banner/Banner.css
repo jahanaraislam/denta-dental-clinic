@@ -1,0 +1,47 @@
+/* banner styles start */
+.banner {
+    background-image: url(../../../assets/banner.jpg);
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+  
+  }
+  .banner-left {
+    margin-top: 90px;
+    padding-right: 80px;
+  }
+  .banner-btn1 {
+    background-color: #022e31;
+    padding: 18px 40px;
+    font-weight: 500;
+    font-size: 14px;
+    word-spacing: 2px;
+    border: 2px solid #404402;
+    border-radius: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #faf5f1;
+    font-weight: bold;
+  }
+  .banner-btn2 {
+    border: 2px solid #e7d9d1;
+    color: #073a3d;
+    padding: 18px 40px;
+    font-weight: bold;
+    font-size: 14px;
+    word-spacing: 2px;
+    border-radius: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #faf5f1;
+  }
+  .banner-btn2:hover {
+    color: #faf5f1;
+    border: 2px solid #7a4a2d;
+    background-color: #251d14;
+  }
+  .banner-btn1:hover {
+    border: 2px solid #e7d9d1;
+    color: #b16d20;
+    background-color: #faf5f1;
+  }

@@ -1,0 +1,19 @@
+/* doctors section styles start */
+.title {
+    color: rgb(170, 122, 59);
+  }
+  .sub-title {
+    color: rgb(95, 82, 82);
+  }
+  .doctor {
+    overflow: hidden;
+  }
+  .doctor img {
+    cursor: zoom-in;
+    transition: transform 0.5s ease;
+    width: 260px;
+    height: 200px;
+  }
+  .doctor img:hover {
+    transform: scale(1.2);
+  }
