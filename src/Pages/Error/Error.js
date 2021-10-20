@@ -8,7 +8,7 @@ const Error = () => {
         404
       </h1>
       <h1 className="text-center display-4 mb-5">Page Not Found</h1>
-      <Link to="/home"><button className="psychare-btn w-25 text-center">Go Back</button></Link>
+      <Link to="/home"><button className="denta-btn w-25 text-center">Go Back</button></Link>
     </div>
   );
 };
