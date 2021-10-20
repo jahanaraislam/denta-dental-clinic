@@ -69,7 +69,7 @@ const userRegistrationHandeler = e => {
           <img src={googleImg} alt="" /> Sign in With Google
         </button>
       </div>
-      <p>{error}</p>
+      <p className="text-success">{error}</p>
     </div>
   );
 };

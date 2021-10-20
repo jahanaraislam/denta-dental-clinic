@@ -1,12 +1,19 @@
 import initializeAuthentication from "../Firebase/firebase.init";
 
 import {
-  getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile  
+  getAuth,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 
 import { useEffect, useState } from "react";
 
-initializeAuthentication()
+initializeAuthentication();
 
 const useFirebase = () => {
   // imported needed things
@@ -14,86 +21,82 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
   const [name, setName] = useState();
   const [user, setUser] = useState({});
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [isLoading, setIsloading] = useState(true);
-// sign in google
+  // sign in google
   const signInWithGoogle = () => {
-    setIsloading(true)
+    setIsloading(true);
     return signInWithPopup(auth, googleProvider);
   };
-// onAuth sate change
+  // onAuth sate change
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
       } else {
         // User is signed out
+        setUser({});
         // ...
       }
-      setIsloading(false)
+      setIsloading(false);
     });
   }, []);
-// logout
+  // logout
   const handleLogout = () => {
-    setIsloading(true)
-        signOut(auth).then(() => {
-            setUser({});
-            setError('')
-        }).catch((error) => {
-            const errMsg = error.message;
-            setError(errMsg)
-        }).finally(() => setIsloading(false))
+    setIsloading(true);
+    signOut(auth)
+      .then(() => {
+        setUser({});
+      })
+      .catch((error) => {
+        setError(error);
+      })
+      .finally(() => setIsloading(false));
   };
-// sign in user
-const createUserWithEmailPassword = () => {
-  createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-          const user = userCredential.user;
-          setUser(user);
-          setError('Account Creating Success, please login..');
-          getName();
+  // sign in user
+  const createUserWithEmailPassword = () => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        setUser(result.user);
+        setError("Account Created Successfully, please login..");
+        getName();
       })
       .catch((error) => {
-          setError(error.message);
+        setError(error.message);
       });
-}
+  };
 
-// login user
-const loginWithEmailPassword = () => {
-  signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          setUser(user);
-          setError('')
+  // login user
+  const loginWithEmailPassword = () => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+  // for showing name
+  const getName = () => {
+    updateProfile(auth.currentUser, { displayName: name })
+      .then((result) => {
+        // Profile updated!
+        // ...
       })
       .catch((error) => {
-          setError(error.message);
+        setError("something went wrong");
       });
-}
-// for showing name
-const getName = () => {
-  updateProfile(auth.currentUser, {displayName:name})
-  .then((result) => {
-      // Profile updated!
-      // ...
-    }).catch((error) => {
-      setError('something went wrong')
-    });
-}
+  };
   return {
     user,
-    error,signInWithGoogle,
+    error,
+    signInWithGoogle,
     handleLogout,
     createUserWithEmailPassword,
     setEmail,
     setPassword,
     loginWithEmailPassword,
     setName,
+    setUser,
+    setError,
     isLoading,
-    setIsloading
+    setIsloading,
   };
 };
 

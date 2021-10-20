@@ -4,7 +4,7 @@ import "./Login.css";
 import googleImg from "../../assets/google.jpg";
 // login form
 const Login = () => {
-  const { setEmail, setPassword, error, signInWithGoogle,loginWithEmailPassword} =useAuth();
+  const {setUser, setEmail,setError, setPassword, error, signInWithGoogle,loginWithEmailPassword} =useAuth();
   // needed things imported
   const location = useLocation();
   const redirect_url = location.state?.from || "/home"; //condition route
@@ -24,10 +24,19 @@ const Login = () => {
       setPassword(e.target.value)
   }
   // login with email and password handeler 
-  const emailPasswordloginHandeler = e => {
-      e.preventDefault()
-      loginWithEmailPassword()
-  }
+  const emailPasswordloginHandeler = (e) => {
+    e.preventDefault();
+    loginWithEmailPassword()
+      .then((result) => {
+        // Signed in
+        setUser(result.user);
+        history.push(redirect_url);
+        setError("Congratulation..!");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
   return (
     // login form
     <div className="login-form row my-5">
@@ -57,7 +66,7 @@ const Login = () => {
         New to Denta?<Link to="/register">Create Account</Link>
       </p>
       {/* catch error */}
-      <p> {error}</p>
+      
       <div className="ms-5">---------or---------</div>
       <div className="google-signIn">
         {/* google sign in */}
@@ -65,6 +74,7 @@ const Login = () => {
           <img src={googleImg} alt="" /> Sign in With Google
         </button>
       </div>
+      <p className="text-success"> {error}</p>
     </div>
   );
 };
