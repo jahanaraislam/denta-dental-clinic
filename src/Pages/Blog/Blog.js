@@ -11,16 +11,14 @@ const Blog = () => {
             <div className="row container mx-auto">
                 <hr className="hr" />
                 <h1 className="about-title"> RECENT BLOG POSTS</h1>
-                <h3 className="about-sub-title my-4">
-                    Stay Motivated, read the weekly blog articles.
-                </h3>
+               
             </div>
             {/* blog container */}
             <div className="row container g-4 px-5 mx-auto mb-5">
                 {/* blog---1 */}
                 <div className="col-lg-6 col-md-12 p-4 blog">
                     <img src={blogImg1} alt="" />
-                    <h5 className="blog-sub-title">21 Feb. 2018</h5>
+                  
                     <h5 className="blog-sub-title">
                         By: admin / Dental, / Treatment Comment: 0
                     </h5>
@@ -34,16 +32,16 @@ const Blog = () => {
 
                         One other consideration we don’t typically think about (and probably don’t like to think about) is that germs can hide and build up in toothbrush bristles. This makes it important to replace your toothbrush after you’ve had a cold, or risk possible reinfection.
 
-                        Fungus and bacteria can also develop in the bristles if not taken care of properly. After use, make sure you rinse off and dry your toothbrush thoroughly, storing uncovered in an upright position and keeping it away from other used toothbrushes. When traveling, be sure to cover your toothbrush head to protect it and reduce the spread of germs.
+                        Fungus and bacteria can also develop in the bristles if not taken care of properly. 
                     </p>
                     <button className="blog-btn">Read More</button>
                 </div>
                 {/* blog---2*/}
-                <div className="col-lg-6 col-md-12 p-4">
+                <div className="col-lg-6 col-md-12 blog p-4">
                     <img src={blogImg2} alt="" />
-                    <h5 className="blog-sub-title">21 Feb. 2018</h5>
+                   
                     <h5 className="blog-sub-title">
-                        By: admin / Psychology, / Treatment Comment: 0
+                        By: admin / Dental / Treatment Comment: 0
                     </h5>
                     <hr className="blog-hr" />
                     <h3 className="blog-title">

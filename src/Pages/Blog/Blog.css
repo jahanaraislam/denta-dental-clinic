@@ -3,20 +3,24 @@
     background-color: rgb(250, 247, 241);
   }
   .blog-title {
-    color: #856142;
+    color: #034b47;
     margin-bottom: 35px;
     margin-top: 35px;
   }
   .blog-sub-title {
     margin-top: 10px;
-    color: rgb(201, 153, 90);
+    color: rgb(7, 53, 59);
+  }
+  .blog img{
+      width: 550px;
+      height: 500px;
   }
   .blog-text {
     color: gray;
   }
   .blog-hr {
     color: sandybrown;
-    border-bottom: 3px solid sandybrown;
+    border-bottom: 3px solid rgb(5, 51, 59);
   }
   .blog-btn {
     color: rgb(247, 239, 239);
@@ -24,9 +28,9 @@
     font-weight: 500;
     font-size: 18px;
     word-spacing: 2px;
-    border: 2px solid #ac7757;
+    border: 2px solid #035153;
     border-radius: 7px;
     margin-left: 5px;
     margin-right: 5px;
-    background-color: #a0703a;
+    background-color: #031c20;
   }

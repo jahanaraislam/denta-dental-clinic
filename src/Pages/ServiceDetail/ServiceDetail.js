@@ -39,23 +39,9 @@ const ServiceDetail = () => {
         <div className="col-md-6 col-12 detail-left">
           <img className="img-fluid " src={serviceDetail?.image} alt="" />
         </div>
-        <hr className="hr" />
+        <hr className="hr mt-5" />
       </div>
-      {/* bottom part */}
-      <div className="row bottom-part g-4 detail container py-5 mx-auto">
-        <div className="col-md-6 col-12 detail-left">
-          <img className="img-fluid " src={serviceDetail?.title3Img} alt="" />
-        </div>
-        <div className="col-md-6 col-12 pe-4">
-          <h3 className="top-title my-4">{serviceDetail?.title3}</h3>
-          <h5 className="top-sub-title">{serviceDetail?.title3Des}</h5>
-        </div>
-        <div className="row ">
-          <h1 className="fs-2 text-center fw-bold text-secondary my-5">
-            {serviceDetail?.call}
-          </h1>
-        </div>
-      </div>
+      
     </div>
   );
 };

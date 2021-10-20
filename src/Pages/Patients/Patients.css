@@ -1,17 +1,17 @@
 /* patients styles start */
 .patient-left{
-    background-color: #68530d;
+    background-color: #025858;
     text-align: center;
     padding: 45px 30px 50px;
    height: 320px;
    overflow: hidden;
 }
 .offer-sub-title{
-    color:rgb(204, 194, 194)
+    color:rgb(3, 57, 61)
 }
 .offer-btn{
     background-color: white;
-    color: rgb(59, 34, 34);
+    color: rgb(34, 59, 47);
     padding: 8px 26px;
     font-weight: 500;
     margin-top: 14px;
@@ -23,10 +23,10 @@
     margin-right: 5px;
 }
 .patient-title{
-    color: rgb(136, 90, 29);
+    color: rgb(3, 56, 56);
 }
 .patient-sub-title{
-    color:rgb(165, 127, 78);
+    color:rgb(2, 53, 59);
     margin-top:20px;
     margin-bottom: 10px;
 }
